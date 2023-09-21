@@ -6,6 +6,9 @@
  /* TODO */
 }
 
+#fruit {
+}
+
 body {
   /* TODO */
 }
@@ -16,6 +19,11 @@ input {
 
 .search-container {
  /* TODO */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+
 }
 .search-container input,
 .search-container .suggestions {
