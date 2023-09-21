@@ -14,7 +14,8 @@ function search(str) {
 
 // as user is typing get type ahead matches
 function searchHandler(e) {
-	showSuggestions(search(e.target.value));
+	searchString = e.target.value
+	showSuggestions(search(searchString), searchString);
 	// originally used e.key and processed keystrokes only rather than value in the field
 	// now the need to deal with special keystrokes is gone.
 }
@@ -25,20 +26,41 @@ function removeList(){
 	}
 }
 
-function addListItem(text){
+//make bold style letter matches
+function makeInnerHTML(result, aString){
+	result = result.toLowerCase().split(aString);
+	let first = result.shift();
+	let last = ('</b>' + result.pop());
+	let inHTML = ''
+	if (first === ''){
+		// deal with the A in Apple
+		inHTML = (first + '<b>' + aString.charAt(0).toUpperCase() + aString.slice(1));
+	}else {
+		inHTML = (first + '<b>' + aString);
+	}
+	for (let item of result){
+		// </b>item<b>sString
+		inHTML += ('</b>' + item + '<b>' + aString)
+	};
+	inHTML += last;
+	return inHTML;
+}
+
+// drop down of choices below the search bar. letter matches are in bold
+function addListItem(textResult, sString){
 	const newLI = document.createElement('li');
 	newLI.setAttribute('class', 'result-li');
-	newLI.innerText = text;
+	newLI.innerHTML = makeInnerHTML(textResult, sString);
 	suggestions.append(newLI);
 }
 
 
 // display type ahead matches
-function showSuggestions(results) { // what was input val?
+function showSuggestions(results, inputVal) {
 	removeList();
 	// make new list
 	for (let item of results){
-		addListItem(item);
+		addListItem(item, inputVal);
 	}
 }
 
