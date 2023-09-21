@@ -34,23 +34,23 @@ body {
    list-style: none;
    padding: unset;
    margin: unset;
+
 }
 
-.suggestions li {
-  border: 1px solid grey;
-}
 
-.suggestions .result-button{
+.suggestions .result-li {
   border: unset;
   padding: 0.3em;
   cursor: pointer;
   background: unset;
   width: 100%;
   text-align: left;
+  background-color: rgb(255, 183, 0);
 }
 
-.suggestions .result-button:hover{
+.suggestions .result-li:hover{
   background-color: rgb(255, 98, 0);
+  font-weight: bold;
   color: black;
 }
 
