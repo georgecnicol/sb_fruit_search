@@ -6,9 +6,6 @@ body {
   background-image: linear-gradient(to right, rgb(194, 194, 52), rgb(233, 62, 62));
 }
 
-:focus {
- /* TODO */
-}
 
 #fruit {
   border: unset;
@@ -16,15 +13,6 @@ body {
   padding: 0.3em;
 
 }
-
-body {
-  /* TODO */
-}
-
-input {
- /* TODO */
-}
-
 
 .super-container{
   display: flex;
@@ -38,17 +26,6 @@ input {
   height: 50%;
 }
 
-
-/*
-.search-container {
-  display: inline-block;
-}
-*/
-
-.search-container input,
-.search-container .suggestions {
-
-}
 .search-container input {
  width: 100%; /* make as large as rest of dropdown field */
 
@@ -59,14 +36,6 @@ input {
    margin: unset;
 }
 
-/*
-ul {
-  TODO - unused
-}
-ul.has-suggestions {
-   TODO - unused
-}
-*/
 .suggestions li {
   border: 1px solid grey;
 }
@@ -83,10 +52,6 @@ ul.has-suggestions {
 .suggestions .result-button:hover{
   background-color: rgb(255, 98, 0);
   color: black;
-}
-
-input {
-   /* TODO */
 }
 
 ::-webkit-input-placeholder {
