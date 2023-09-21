@@ -1,5 +1,9 @@
 * {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, rgb(194, 194, 52), rgb(233, 62, 62));
 }
 
 :focus {
@@ -7,6 +11,10 @@
 }
 
 #fruit {
+  border: unset;
+  background-image: linear-gradient(to right, rgb(194, 194, 52), rgb(233, 62, 62));
+  padding: 0.3em;
+
 }
 
 body {
@@ -17,38 +25,71 @@ input {
  /* TODO */
 }
 
-.search-container {
- /* TODO */
- display: flex;
- align-items: center;
- justify-content: center;
- height: 100vh;
 
+.super-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
+
+.search-container {
+  width: 50%;
+  height: 50%;
+}
+
+
+/*
+.search-container {
+  display: inline-block;
+}
+*/
+
 .search-container input,
 .search-container .suggestions {
-  /* TODO */
+
 }
 .search-container input {
- /* TODO */
+ width: 100%; /* make as large as rest of dropdown field */
+
 }
 .search-container .suggestions {
-   /* TODO */
+   list-style: none;
+   padding: unset;
+   margin: unset;
 }
 
+/*
 ul {
-  /* TODO */
+  TODO - unused
 }
 ul.has-suggestions {
-  /* TODO */
+   TODO - unused
 }
-ul li {
-  /* TODO */
+*/
+.suggestions li {
+  border: 1px solid grey;
 }
-ul li:hover {
-  /* TODO */
+
+.suggestions .result-button{
+  border: unset;
+  padding: 0.3em;
+  cursor: pointer;
+  background: unset;
+  width: 100%;
+  text-align: left;
+}
+
+.suggestions .result-button:hover{
+  background-color: rgb(255, 98, 0);
+  color: black;
 }
 
 input {
    /* TODO */
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+  color: rgb(48, 48, 184);
 }
