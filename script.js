@@ -28,13 +28,13 @@ function removeList(){
 
 //make bold style letter matches
 function makeInnerHTML(result, aString){
-	result = result.toLowerCase().split(aString);
+	result = result.toLowerCase().split(aString.toLowerCase());
 	let first = result.shift();
 	let last = ('</b>' + result.pop());
 	let inHTML = ''
 	if (first === ''){
 		// deal with the A in Apple
-		inHTML = (first + '<b>' + aString.charAt(0).toUpperCase() + aString.slice(1));
+	inHTML = (first + '<b>' + aString.charAt(0).toUpperCase() + aString.slice(1));
 	}else {
 		inHTML = (first + '<b>' + aString);
 	}
@@ -43,6 +43,7 @@ function makeInnerHTML(result, aString){
 		inHTML += ('</b>' + item + '<b>' + aString)
 	};
 	inHTML += last;
+	inHTML = inHTML.charAt(0).toUpperCase() + inHTML.slice(1);
 	return inHTML;
 }
 
